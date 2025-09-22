@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Layout from "../components/Layout";
 
 // Views
+
 import HomePage from "../views/HomePage";
 import ThreeDemoView from "../views/ThreeDemoView";
 import LayoutsView from "../views/LayoutsView";
@@ -13,6 +14,9 @@ import ConversorUnid from "../views/ConversorUnid";
 import ValidContrasena from "../views/ValidContrasena";
 import ContadorClics from "../views/ContadorClics";
 import ListaTareas from "../views/ListaTareas";
+import DigitalClockView from "../views/DigitalClockView"
+import SearchListView from "../views/SearchListView";;
+
 
 export default function AppRoutes() {
   return (
@@ -29,6 +33,8 @@ export default function AppRoutes() {
         <Route path="validcontrasena" element={<ValidContrasena />} />
         <Route path="contadorclics" element={<ContadorClics />} />
         <Route path="listareas" element={<ListaTareas />} />
+        <Route path="reloj" element={<DigitalClockView />} />
+        <Route path="searchlist" element={<SearchListView />} />
       </Route>
     </Routes>
   );
