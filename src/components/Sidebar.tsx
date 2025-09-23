@@ -22,6 +22,8 @@ const exerciseItems: SidebarItem[] = [
   { label: "Conversor de Unidades", route: "/conversorunid", icon: <FaRuler /> },
   { label: "Validadador de Contraseñas", route: "/validcontrasena", icon: <FaKey /> },
   { label: "Contador de Clics con Almacenamiento", route: "/contadorclics", icon: <FaMouse /> },
+  { label: "Contador Regresivo", route: "/countdowntimer", icon: <FaClock /> },
+  { label: "Selector de Colores", route: "/colorpicker", icon: <FaCube /> },
   { label: "Lista de Tareas", route: "/listareas", icon: <FaList /> },
   { label: "Buscador en Lista", route: "/searchlist", icon: <FaSearch /> },
 ];
