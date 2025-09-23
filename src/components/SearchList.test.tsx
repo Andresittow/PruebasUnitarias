@@ -1,5 +1,4 @@
-import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
+import { render, screen, fireEvent } from "@testing-library/react";
 import SearchList from "./SearchList";
 
 const names = ["Andrés", "Kyara", "Juan", "María"];
@@ -12,18 +11,18 @@ describe("SearchList", () => {
     });
   });
 
-  test("Filtra los nombres correctamente", async () => {
+  test("Filtra los nombres correctamente", () => {
     render(<SearchList items={names} />);
     const input = screen.getByPlaceholderText("Escribe un nombre...");
-    await userEvent.type(input, "Ky");
+    fireEvent.change(input, { target: { value: "Ky" } });
     expect(screen.getByText("Kyara")).toBeInTheDocument();
     expect(screen.queryByText("Andrés")).not.toBeInTheDocument();
   });
 
-  test("Muestra 'No encontrado' si no hay coincidencias", async () => {
+  test("Muestra 'No encontrado' si no hay coincidencias", () => {
     render(<SearchList items={names} />);
     const input = screen.getByPlaceholderText("Escribe un nombre...");
-    await userEvent.type(input, "XYZ");
+    fireEvent.change(input, { target: { value: "XYZ" } });
     expect(screen.getByText("No encontrado")).toBeInTheDocument();
   });
 });

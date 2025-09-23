@@ -1,5 +1,4 @@
-// src/components/DigitalClock.test.tsx
-import { render, screen, act } from "@testing-library/react";
+import { render, screen, act, fireEvent } from "@testing-library/react";
 import DigitalClock from "./DigitalClock";
 
 beforeEach(() => {
@@ -20,14 +19,14 @@ describe("DigitalClock", () => {
   test("avanza correctamente con el tiempo", () => {
     render(<DigitalClock />);
 
-    // Avanzar 1 segundo envuelto en act()
     act(() => {
+      fireEvent.click(document.body); // acción dummy para envolver el act
       jest.advanceTimersByTime(1000);
     });
     expect(screen.getByText("12:00:01")).toBeInTheDocument();
 
-    // Avanzar 59 segundos más
     act(() => {
+      fireEvent.click(document.body); // otra acción dummy
       jest.advanceTimersByTime(59_000);
     });
     expect(screen.getByText("12:01:00")).toBeInTheDocument();

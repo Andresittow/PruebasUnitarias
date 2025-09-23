@@ -17,7 +17,7 @@ const mainItems: SidebarItem[] = [
 ];
 
 const exerciseItems: SidebarItem[] = [
-  { label: "Reloj Digital", route: "/reloj", icon: <FaClock /> },
+  { label: "Reloj Digital", route: "/digitalclock", icon: <FaClock /> },
   { label: "Tablas de Multiplicar", route: "/tablasmul", icon: <FaCalculator /> },
   { label: "Conversor de Unidades", route: "/conversorunid", icon: <FaRuler /> },
   { label: "Validadador de Contraseñas", route: "/validcontrasena", icon: <FaKey /> },

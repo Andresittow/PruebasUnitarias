@@ -36,7 +36,7 @@ export default function AppRoutes() {
         <Route path="validcontrasena" element={<ValidContrasena />} />
         <Route path="contadorclics" element={<ContadorClics />} />
         <Route path="listareas" element={<ListaTareas />} />
-        <Route path="reloj" element={<DigitalClockView />} />
+        <Route path="digitalclock" element={<DigitalClockView />} />
         <Route path="searchlist" element={<SearchListView />} />
         <Route path="colorpicker" element={<ColorPickerView />} />
   <Route path="countdowntimer" element={<CountdownTimerView />} />
