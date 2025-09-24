@@ -1,15 +1,7 @@
-import React, { useState, useEffect } from "react";
-
-const LOCAL_KEY = "color-picker-value";
+import React, { useState } from "react";
 
 const ColorPicker: React.FC = () => {
-  const [color, setColor] = useState<string>(() => {
-    return localStorage.getItem(LOCAL_KEY) || "#ffffff";
-  });
-
-  useEffect(() => {
-    localStorage.setItem(LOCAL_KEY, color);
-  }, [color]);
+  const [color, setColor] = useState<string>("#ffffff");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setColor(e.target.value);

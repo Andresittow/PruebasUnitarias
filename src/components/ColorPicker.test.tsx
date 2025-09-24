@@ -2,7 +2,6 @@ import { render, fireEvent, cleanup } from "@testing-library/react";
 import ColorPicker from "./ColorPicker";
 
 beforeEach(() => {
-  localStorage.clear();
   cleanup();
 });
 
@@ -21,21 +20,5 @@ describe("ColorPicker", () => {
 
     const box = getByTestId("color-box");
     expect(box).toHaveStyle("background: #ff0000");
-  });
-
-  it("persiste el color en localStorage y al recargar el componente", () => {
-    const { getByLabelText, unmount } = render(<ColorPicker />);
-    const input = getByLabelText("color-input") as HTMLInputElement;
-
-    // Cambiar color
-    fireEvent.change(input, { target: { value: "#00ff00" } });
-    expect(localStorage.getItem("color-picker-value")).toBe("#00ff00");
-
-    // Desmontar y volver a montar (simula reload)
-    unmount();
-    const { getByTestId } = render(<ColorPicker />);
-    const box = getByTestId("color-box");
-
-    expect(box).toHaveStyle("background: #00ff00");
   });
 });
