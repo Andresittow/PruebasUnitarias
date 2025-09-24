@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from "@testing-library/react";
 import SearchList from "./SearchList";
 
-const names = ["Andrés", "Kyara", "Juan", "María"];
+const names = ["Andrés", "Kyara", "Juan", "María", "Kate", "Saray", "Edison"];
 
 describe("SearchList", () => {
   test("Muestra todos los elementos al inicio", () => {

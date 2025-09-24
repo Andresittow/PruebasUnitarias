@@ -1,6 +1,6 @@
 import SearchList from "../components/SearchList";
 
-const names = ["Andrés", "Kyara", "Juan", "María", "Sofía", "Pedro"];
+const names = ["Andrés", "Kyara", "Juan", "María", "Sofía", "Pedro", "Kate", "Saray", "Edison"];
 
 export default function SearchListView() {
   return (

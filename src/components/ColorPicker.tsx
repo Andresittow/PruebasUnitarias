@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-const LOCAL_KEY = 'color-picker-value';
+const LOCAL_KEY = "color-picker-value";
 
 const ColorPicker: React.FC = () => {
   const [color, setColor] = useState<string>(() => {
-    return localStorage.getItem(LOCAL_KEY) || '#ffffff';
+    return localStorage.getItem(LOCAL_KEY) || "#ffffff";
   });
 
   useEffect(() => {
@@ -16,17 +16,26 @@ const ColorPicker: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="flex flex-col items-center space-y-4">
       <input
         type="color"
         value={color}
         onChange={handleChange}
         aria-label="color-input"
+        className="w-16 h-10 cursor-pointer border rounded"
       />
       <div
         data-testid="color-box"
-        style={{ width: 100, height: 100, background: color, border: '1px solid #ccc' }}
+        className="rounded-xl shadow-lg border transition-all duration-300"
+        style={{
+          width: 150,
+          height: 150,
+          background: color,
+        }}
       />
+      <p className="font-mono text-slate-700 dark:text-slate-200">
+        Color actual: <span className="font-bold">{color}</span>
+      </p>
     </div>
   );
 };
